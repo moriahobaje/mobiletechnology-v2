@@ -1,0 +1,23 @@
+<h2>Manage Users</h2>
+
+<div>
+  <input type="text" (change)="search($event)" (keyup)="search($event)" placeholder="Search box - type your keywords here">
+</div>
+
+<ul>
+  <ng-container *ngFor="let user of searchResults; index as id">
+    <li *ngIf="user.email !== theUser.email">
+      <div>
+        <span>{{ user }}</span>
+      </div>
+      <div>
+        <span>Enabled: </span>
+        <span>{{ user.Enabled }}</span>
+      </div>
+      <div>
+        <button type="button" (click)="setStatus(user, true)" *ngIf="!user.Enabled">Enable</button>
+        <button type="button" (click)="setStatus(user, false)" *ngIf="user.Enabled">Disable</button>
+      </div>
+    </li>
+  </ng-container>
+</ul>

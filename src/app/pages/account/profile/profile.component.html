@@ -1,0 +1,21 @@
+<div>
+  <form (submit)="doSubmit()" ngNativeValidate>
+    <div>
+			<label>First Name:</label>
+			<input name="firstName" type="text" [(ngModel)]="user.FirstName" required>
+    </div>
+    <div>
+			<label>Last Name:</label>
+			<input name="lastName" type="text" [(ngModel)]="user.LastName" required>
+    </div>
+    <div>
+			<label>Address:</label>
+			<input name="address" type="text" [(ngModel)]="user.Address" required>
+    </div>
+    <input type="submit" value="Update Profile">
+	</form>
+
+  <div *ngIf="errorMessage">
+    Error: {{ errorMessage }}
+  </div>
+</div>

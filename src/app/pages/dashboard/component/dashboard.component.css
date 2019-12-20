@@ -1,0 +1,71 @@
+div {
+  color: black;
+  display: block;
+  margin: 5px;
+}
+body
+{
+  height: 100%;
+}
+
+.container a
+{
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  margin: 10px; 
+  list-style: none;
+  
+}
+
+.card p
+{
+  margin: 0;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  background-color: lightgray;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+  display: block;
+  left: 100px; 
+  width: 90%;
+}
+
+.courses
+{
+  background-color: red;
+  margin: 0; 
+  padding: 0;
+} 
+
+.booklist
+{
+background-color: blue;
+  margin: 0; 
+  padding: 0;
+} 
+
+.to-do
+{
+background-color: green;
+  margin: 0; 
+  padding: 0;
+}
+
+.account
+{
+background-color: yellow;
+  margin: 0; 
+  padding: 0;
+}

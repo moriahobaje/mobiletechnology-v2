@@ -1,0 +1,35 @@
+<div class='header'>
+  
+  <h1>Mobile Technology</h1>
+</div>
+
+<div class="col-sm-12 col-md-6 m-auto" id='fields'>
+<div class="bar">
+<h2> Registration </h2>
+</div>
+	<form (submit)="doSubmit()" ngNativeValidate>
+		<div>
+			<label>Email:</label>
+			<input class="form-control" name="email" type="email" [(ngModel)]="user.Email" required>
+    </div>
+    <div>
+			<label>Password:</label>
+			<input class="form-control" name="password" type="password" [(ngModel)]="user.Password" required>
+    </div>
+    <div>
+			<label>Type in the Password again:</label>
+			<input class="form-control" name="passwordConfirm" type="password" [(ngModel)]="user.PasswordConfirm" required>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Create Account">
+	</form>
+
+  <div *ngIf="errorMessage">
+    Error: {{ errorMessage }}
+  </div>
+
+  <div>
+    Got an account? <a routerLink="/auth/login">Click here</a> to Login!
+  </div>
+
+  <br>User JSON: {{user | json}}
+</div>

@@ -1,0 +1,78 @@
+
+ 
+  <!-- Bootsrap Nav: https://getbootstrap.com/docs/4.0/components/navbar/#how-it-works -->
+  <!-- *ngIf removes the entire html structure it's attached to if the value it gets is false and puts it back if it's true -->
+  <!-- so, as the user's authentication status will change over time, the navigation will be shown/hidden as the case may be -->
+	<!-- isAuthenticated is a variable created in the Layout component class -->
+  
+  <div class="navbar navbar-expand-sm navbar-light bg-light" *ngIf="isAuthenticated" id="nav">
+
+					<!-- Title -->
+					<!-- Hamburger link for when menu is collapsed due to screen size being too narrow -->
+					
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+						<!-- Navigation menu -->
+						<div class="collapse navbar-collapse col-11" id="navbarNav">
+							<ul class="navbar-nav" data-toggle="collapse" data-target="#navbarNav">
+                
+                <li><div class="logo"><a class="navbar-brand" routerLink="/">Mobile Technology</a></div></li>
+
+								<li class="nav-item" routerLinkActive="active">
+									<a class="nav-link" routerLink="/dashboard">Home</a>
+								</li>
+
+								<li class="nav-item" routerLinkActive="active">
+									<a class="nav-link" routerLink="/about">About</a>
+								</li>
+								
+								<li class="nav-item dropdown" *ngIf="theUser.isAdmin()">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"aria-haspopup="true" aria-expanded="false">Admin</a>
+
+									<div class="dropdown-menu">
+										<a class="dropdown-item" routerLink="/admin/manage-users" routerLinkActive="active">Manage Users</a>
+									</div>
+								</li>
+
+								<li class="nav-item" routerLinkActive="active">
+									<a class="nav-link" routerLink="/auth/logout">Logout</a>
+								</li>
+							</ul>
+              <div>
+                <label for="search">Search </label>
+              <input name="search" type="text" (change)="search($event)" (keyup)="search($event)" placeholder="Search" id="search" >
+            </div>
+					</div>
+				</div>
+
+      
+      
+      <body>
+   <div class="container-fluid">	
+     <router-outlet></router-outlet>
+
+		</div>
+
+    <div class ="sidecar" *ngIf = "isAuthenticated">
+    <div id="head">Notification</div>
+      
+        Coming soon  *****
+<br>
+        Here you can view messages and announcements fro tutors/teachers & view update anout a course.
+      </div>
+
+	
+</body>
+
+	<div class="row mt-3">
+
+		<div class="col-12 text-center">
+   
+
+			<footer>Copyright 2019</footer>
+
+		</div>
+
+</div>

@@ -1,0 +1,46 @@
+<body> 
+<div style="background-color: lightgrey; color: black; width: 100%; margin-left: 0;">
+ <h2> Welcome, {{ user.Email }}!</h2>
+ You are here: Home
+  </div>
+
+
+<div class="container">
+  
+
+   <a routerLink ="/courses"> <div class="card">
+  <i class="fas fa-chalkboard fa-10x"></i>
+  <div class="courses">
+    <h4><b>Courses</b></h4> 
+    <p>Click here to view your courses.</p> 
+  </div>
+</div></a>
+
+   <a routerLink="/account"> <div class="card">
+  <i class="fas fa-user fa-10x"></i>
+  <div class="account">
+    <h4><b>Accounts</b></h4> 
+    <p>Click here to view or change your Account</p> 
+  </div>
+</div></a>
+
+    <a routerLink="/booklist"><li><div class="card">
+  <i class="fas fa-bookmark fa-10x"></i>
+  <div class="booklist">
+    <h4><b>Booklist</b></h4> 
+    <p>Click here to access your Reading list.</p> 
+  </div>
+</div></a> 
+
+   <a routerLink="/to-do"> <li><div class="card">
+  <i class="fas fa-tasks fa-10x"></i>
+  <div class="to-do">
+    <h4><b>To-Do</b></h4> 
+    <p>Click here to access your To-do list</p> 
+  </div>
+</div></a>
+
+ 
+
+</div>
+<body>

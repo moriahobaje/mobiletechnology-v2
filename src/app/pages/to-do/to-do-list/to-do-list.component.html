@@ -1,0 +1,45 @@
+<h2>To-Do List</h2>
+
+<form (submit)="onSubmit()">
+   <div>
+    <label for="to-do-title">Title: </label>
+    <input class="form-control" type="text" id="to-do-title" placeholder="*" [(ngModel)]="toDoItem.title" name="to-do-title" >
+  </div>
+  <div>
+    <label for="to-do-content">Content: </label>
+    <input class="form-control" type="text" id="to-do-content" placeholder="*" [(ngModel)]="toDoItem.content" name="to-do-content">
+
+    <button class ='btn btn-primary' value = "submit" >Create</button>
+
+    <input class=" search form-control" (change)="search($event)" (keyup)="search($event)"  type="text"  placeholder="Enter search here">
+  </div>
+</form>
+
+
+<div class="list">
+<ul>
+  <li *ngFor="let item of searchResults; index as id">
+    <div>
+      <span>Title: </span>
+      <span>{{ item.title }}</span>
+    </div>
+    <!--
+    <div *ngFor="let subItem of item.subItems">
+      <span>Title: </span>
+      <span>{{ subItem.title }}</span>
+    </div>
+    -->
+    <div >
+      <span>Content: </span>
+      <span>{{ item.content }}</span>
+    </div>
+    <div>
+      <span>Created at: </span>
+      <span>{{ item.createdAt | date:'medium' }}</span>
+    </div>
+    <div>
+      <button type="button" (click)="deleteToDoItem(item, id)">Delete</button>
+    </div>
+  </li>
+</ul>
+<div> 
